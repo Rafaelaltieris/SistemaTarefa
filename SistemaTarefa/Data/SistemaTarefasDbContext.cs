@@ -14,6 +14,7 @@ namespace SistemaTarefa.Data
 
         public DbSet<TarefaModel> Tarefas { get; set; }
         public DbSet<UsuarioModel> Usuarios { get; set; }
+        public DbSet<LoginModel> Logins { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

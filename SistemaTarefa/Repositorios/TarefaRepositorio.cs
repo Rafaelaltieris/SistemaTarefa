@@ -49,7 +49,7 @@ namespace SistemaTarefa.Repositorios
             tarefaPorId.Nome = tarefa.Nome;
             tarefaPorId.Descricao = tarefa.Descricao;
             tarefaPorId.Status = tarefa.Status;
-            //tarefaPorId.UsuarioId = tarefa.UsuarioId;
+            tarefaPorId.UsuarioId = tarefa.UsuarioId;
 
             _dbContext.Tarefas.Update(tarefa);
             await _dbContext.SaveChangesAsync();
@@ -60,14 +60,14 @@ namespace SistemaTarefa.Repositorios
         public async Task<TarefaModel> BuscarPorId(int id)
         {
             return await _dbContext.Tarefas
-                //.Include(x => x.Usuario)
+                .Include(x => x.Usuario)
                 .FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<List<TarefaModel>> BuscarTodasTarefas()
         {
             return await _dbContext.Tarefas
-               //.Include(x => x.Usuario)
+               .Include(x => x.Usuario)
                .ToListAsync();
         }
     }

@@ -8,5 +8,8 @@ namespace SistemaTarefa.Model
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public StatusTarefa Status { get; set; }
+        //Adicionando Relacionamento com Usuário
+        public int UsuarioId { get; set; }
+        public UsuarioModel Usuario { get; set; }
     }
 }

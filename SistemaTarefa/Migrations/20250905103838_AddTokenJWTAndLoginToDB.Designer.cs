@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SistemaTarefa.Data;
 
@@ -10,9 +11,11 @@ using SistemaTarefa.Data;
 namespace SistemaTarefa.Migrations
 {
     [DbContext(typeof(SistemaTarefasDbContext))]
-    partial class SistemaTarefasDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250905103838_AddTokenJWTAndLoginToDB")]
+    partial class AddTokenJWTAndLoginToDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
